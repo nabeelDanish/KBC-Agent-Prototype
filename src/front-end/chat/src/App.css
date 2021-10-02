@@ -43,7 +43,7 @@
   align-items: flex-end;
 }
 
-.Messages-message > .avatar {
+.Messages-message > .avatar, .Messages-message > .avatar-bot {
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -51,11 +51,24 @@
   margin: 0 10px -10px;
 }
 
+.Messages-message > .avatar-bot {
+  background-image: "";
+}
+
 .Message-content > .username {
   display: block;
   color: gray;
   font-size: 14px;
   padding-bottom: 4px;
+}
+
+.Members {
+  list-style-type: none;
+  margin: 0;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  text-align: right;
 }
 
 .Message-content > .text {

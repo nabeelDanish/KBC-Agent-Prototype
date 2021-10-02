@@ -33,7 +33,13 @@ class App extends Component {
       id: 0,
       username: this.randomName(),
       color: this.randomColor()
-    }
+    },
+    bot: {
+      id: 1,
+      color: "blue",
+      username: "DANISH"
+    },
+    response: ""
   }
 
   render() {
@@ -41,6 +47,11 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h1>DANISH</h1> 
+          <ul className="Members">
+            <li>Nabeel Danish 18I-0579</li>
+            <li>Farjad Ilyas 18I-0436</li>
+            <li>Saad Saqlain 18I-0694</li>
+          </ul>
         </div>
         <Messages 
           messages={ this.state.messages } 
@@ -58,6 +69,28 @@ class App extends Component {
       member: this.state.member
     })
     this.setState({messages: messages})
+    this.sendRequest(message)
+  }
+
+  sendRequest(e) {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: e })
+    };
+
+    fetch("https://4f5f-206-84-140-151.ngrok.io/reply", requestOptions)
+      .then(response => response.json())
+      .then(data => this.setState({ response: data.response }, this.onResponseReceived))
+  }
+
+  onResponseReceived() {
+    const messages = this.state.messages
+    messages.push({
+      text: this.state.response,
+      member: this.state.bot
+    })
+    this.setState({messages: messages, response: ""})
   }
 }
 
