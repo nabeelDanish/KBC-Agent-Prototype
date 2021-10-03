@@ -1,8 +1,9 @@
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
+from .QAModel import QAModel
 import torch
 
 
-class BERTBased:
+class BERTBase(QAModel):
     def __init__(self):
         model_path = "../../../models/bert-base-cased-squad2/saves"
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
