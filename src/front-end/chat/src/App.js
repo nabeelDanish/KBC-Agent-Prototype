@@ -2,7 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import Messages from './Messages.js'
 import Input from "./Input.js"
+import Header from "./Header"
+import Source from "./Source"
 import { Component } from 'react';
+import { Container } from '@material-ui/core'
 
 class App extends Component {
   randomName() {
@@ -21,11 +24,11 @@ class App extends Component {
   state = {
     messages: [
       {
-        text: "Hello! I am DANISH. I am an Intelligent Q/A Chatbot. Please Ask me Anything",
+        text: "Hello! I am MUKALMA. I am an Intelligent Q/A Chatbot. Please Ask me Anything",
         member: {
           id: 1,
           color: "blue",
-          username: "DANISH"
+          username: "MUKALMA"
         }
       }
     ],
@@ -37,27 +40,45 @@ class App extends Component {
     bot: {
       id: 1,
       color: "blue",
-      username: "DANISH"
+      username: "MUKALMA"
     },
-    response: ""
+    response: "",
+    source: "LOL LMAO",
+    topics: [
+      "Multan", "Karachi"
+    ],
+    currentTopic: "",
   }
 
+  componentDidMount() {
+    this.fetchSource();
+    this.fetchTopics();
+  }
+
+  // Main Render Function
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1>DANISH</h1> 
-          <ul className="Members">
-            <li>Nabeel Danish 18I-0579</li>
-            <li>Farjad Ilyas 18I-0436</li>
-            <li>Saad Saqlain 18I-0694</li>
-          </ul>
+      <div class="container" className="App-container" onLoad={this.fetchSource}>
+        <Header />
+        <div class="container" className="outer-container">
+            <div className="left-container">
+              <div className="App">
+                <Messages 
+                  messages={ this.state.messages } 
+                  currentMember={ this.state.member }/>
+                <Input 
+                  onSendMessage={this.onSendMessage}/>
+              </div>
+            </div>
+            <div className="right-container">
+              <Source 
+                source={this.state.source} 
+                topics={this.state.topics}
+                current_topic={this.state.currentTopic}
+                onTopicSelected={this.onTopicSelected}
+                />
+            </div>
         </div>
-        <Messages 
-          messages={ this.state.messages } 
-          currentMember={ this.state.member }/>
-        <Input 
-          onSendMessage={this.onSendMessage}/>
       </div>
     );
   }
@@ -79,9 +100,73 @@ class App extends Component {
       body: JSON.stringify({ message: e })
     };
 
-    fetch("https://4f5f-206-84-140-151.ngrok.io/reply", requestOptions)
+    fetch("http://127.0.0.1:5000/reply", requestOptions)
       .then(response => response.json())
       .then(data => this.setState({ response: data.response }, this.onResponseReceived))
+      .catch((e) => {
+        console.log(e);
+      })
+  }
+
+  sendTopicRequest(e) {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: e })
+    };
+
+    fetch("http://127.0.0.1:5000/topics/select", requestOptions)
+      .then(response => response.json())
+      .catch((e) => {
+        console.log(e);
+      })
+  }
+
+  onTopicSelected(t) {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic: t })
+    };
+
+    fetch("http://127.0.0.1:5000/topics/select", requestOptions)
+      .then(window.location.reload(false))
+      .catch((e) => {
+        console.log(e);
+      })
+  }
+
+  fetchSource() {
+    fetch("http://127.0.0.1:5000/source")
+      .then(response => response.json())
+      .then(data => this.setState({ ...this.state, source: data.response }))
+      .catch((e) => {
+        console.log("FETCH FAILED!");
+        console.log(e);
+      })
+  }
+
+  fetchTopics() {
+    fetch("http://127.0.0.1:5000/topics")
+      .then(response => response.json())
+      .then(data => {
+        this.addTopicMessage(data.current_topic)
+        this.setState({ ...this.state, topics: data.topics, currentTopic: data.current_topic })
+      })
+      .then()
+      .catch((e) => {
+        console.log("FETCH FAILED!");
+        console.log(e);
+      })
+  }
+
+  addTopicMessage(t) {
+    const messages = this.state.messages
+    messages.push({
+      text: "I can chat about " + t,
+      member: this.state.bot
+    })
+    this.setState({...this.state, messages: messages, response: ""})
   }
 
   onResponseReceived() {

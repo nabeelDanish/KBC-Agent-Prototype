@@ -12,9 +12,7 @@ class BERTBased:
         print(f"Input: {message}")
         inputs = self.tokenizer.encode_plus(message, knowledge_source, return_tensors='pt')
 
-        output = self.model(**inputs)
-        start_scores = output.start_logits
-        end_scores = output.end_logits
+        start_scores, end_scores = self.model(**inputs)
 
         token_start = torch.argmax(start_scores)
         token_end = torch.argmax(end_scores) + 1
