@@ -2,5 +2,12 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/models/DialoGPT-medium/acchide" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/models/all-mpnet-base-v2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/models/distilgpt2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/models/t5-base-e2e-qg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/models/t5-small-e2e-qg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/models/t5-small/saves" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/notebooks/SentSImilarity/keyphrase_extraction/bekaar/question_generation" vcs="Git" />
   </component>
 </project>

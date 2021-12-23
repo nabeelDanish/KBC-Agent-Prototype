@@ -1,0 +1,5 @@
+impl, but in pytorch: https://github.com/Macielyoung/Fine-tune-Bert-Chatbot/blob/master/demo.py
+
+Deep learning setup: https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1
+
+
