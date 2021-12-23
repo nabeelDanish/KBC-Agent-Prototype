@@ -1,0 +1,202 @@
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+@import 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.empty-chat-holder {
+  width: 100%;
+  height: 250px;
+  margin-top: 70px;
+}
+
+.empty-chat {
+  position: relative;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.empty-chat h2 {
+  color: #1546dc;
+  font-family: 'Abril Fatface';
+  padding: 0;
+  font-size: 2rem;
+  margin: 25px auto 15px;
+}
+
+.empty-chat-holder img {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.header-icons {
+  width: 120px;
+  float: right;
+  margin-right: 10px;
+}
+
+.header-icons span {
+  line-height: 70px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.header-icons .fa {
+  cursor: pointer;
+  margin: 10px;
+}
+
+.msg-page {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  overflow-y: auto;
+}
+
+.input-group {
+  margin-right: 20px;
+  border-top: 1px solid #dee6eb;
+  width: 100% !important;
+  background-color: #fff;
+  height: 100%;
+  border-radius: 0 0 7px 7px;
+}
+
+.input-group input {
+  height: 100%;
+  background: #fff;
+}
+
+.input-group ::placeholder {
+  color: #c0c0c0 !important;
+}
+
+.form-control {
+  border: none !important;
+  border-radius: 20px !important;
+}
+
+.input-group-text {
+  background: transparent !important;
+  border: none !important;
+}
+
+.input-group .fa {
+  color: #007bff;
+  float: right;
+}
+
+.bottom-icons {
+  float: left;
+  margin-top: 17px;
+  width: 30% !important;
+  margin-left: 22px;
+}
+
+.bottom-icons .fa {
+  color: #fff;
+  padding: 5px;
+}
+
+.form-control:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+  border-radius: 20px;
+}
+
+.msg-footer {
+  border-radius: 0px 0px 10px 10px;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 60px;
+}
+
+#end-of-chat {
+  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.message-form {
+  height: 100%;
+}
+
+.chat-box {
+  font-family: 'Roboto';
+  position: relative;
+  height: 500px;
+  letter-spacing: 0.5px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='340' height='500' preserveAspectRatio='none' viewBox='0 0 340 500'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1055%26quot%3b)' fill='none'%3e%3crect width='340' height='500' x='0' y='0' fill='rgba(248%2c 249%2c 251%2c 1)'%3e%3c/rect%3e%3cpath d='M235.98 307.04a7.47 7.47 0 1 0 14.06-5.02z' fill='rgba(210%2c 221%2c 243%2c 1)'%3e%3c/path%3e%3cpath d='M173.39 450.19 a29.95 29.95 0 1 0 59.9 0 a29.95 29.95 0 1 0 -59.9 0z' fill='rgba(210%2c 221%2c 243%2c 1)'%3e%3c/path%3e%3cpath d='M191.17 348.93L206.71 348.93L206.71 364.47L191.17 364.47z' stroke='rgba(210%2c 221%2c 243%2c 1)'%3e%3c/path%3e%3cpath d='M302.88 277.43a3.33 3.33 0 1 0-1.46 6.5z' stroke='rgba(247%2c 236%2c 229%2c 1)'%3e%3c/path%3e%3cpath d='M97.91 211.81a26.31 26.31 0 1 0 52.56 2.64z' stroke='rgba(210%2c 221%2c 243%2c 1)'%3e%3c/path%3e%3cpath d='M255.59 84.13a23.46 23.46 0 1 0 3.29 46.8z' fill='rgba(247%2c 236%2c 229%2c 1)'%3e%3c/path%3e%3cpath d='M197.23 332.78 a15.98 15.98 0 1 0 31.96 0 a15.98 15.98 0 1 0 -31.96 0z' stroke='rgba(210%2c 221%2c 243%2c 1)'%3e%3c/path%3e%3cpath d='M13.82 262.79 a14.02 14.02 0 1 0 28.04 0 a14.02 14.02 0 1 0 -28.04 0z' fill='rgba(229%2c 235%2c 247%2c 1)'%3e%3c/path%3e%3cpath d='M99.62 443.56a10.45 10.45 0 1 0-15.2 14.34z' fill='rgba(247%2c 236%2c 229%2c 1)'%3e%3c/path%3e%3cpath d='M307.06 492.97a29.7 29.7 0 1 0 57.99-12.86z' stroke='rgba(247%2c 236%2c 229%2c 1)'%3e%3c/path%3e%3cpath d='M0.69 206.83L14.58 206.83L14.58 220.72L0.69 220.72z' stroke='rgba(247%2c 236%2c 229%2c 1)'%3e%3c/path%3e%3cpath d='M302.11 362.86 a19.34 19.34 0 1 0 38.68 0 a19.34 19.34 0 1 0 -38.68 0z' stroke='rgba(247%2c 236%2c 229%2c 1)'%3e%3c/path%3e%3cpath d='M328.86 245.61L340.58 245.61L340.58 257.33L328.86 257.33z' stroke='rgba(210%2c 221%2c 243%2c 1)'%3e%3c/path%3e%3cpath d='M312.8 158.69L337.5 158.69L337.5 183.39L312.8 183.39z' stroke='rgba(247%2c 236%2c 229%2c 1)'%3e%3c/path%3e%3cpath d='M232.24 243.9L255.19 243.9L255.19 251.13L232.24 251.13z' stroke='rgba(210%2c 221%2c 243%2c 1)'%3e%3c/path%3e%3cpath d='M52.98 304.19 a24.97 24.97 0 1 0 49.94 0 a24.97 24.97 0 1 0 -49.94 0z' stroke='rgba(229%2c 235%2c 247%2c 1)'%3e%3c/path%3e%3cpath d='M176.73 284.76 a14.2 14.2 0 1 0 28.4 0 a14.2 14.2 0 1 0 -28.4 0z' fill='rgba(210%2c 221%2c 243%2c 1)'%3e%3c/path%3e%3cpath d='M80.35 19.62L86.14 19.62L86.14 25.41L80.35 25.41z' fill='rgba(210%2c 221%2c 243%2c 1)'%3e%3c/path%3e%3cpath d='M297.7 445.07 a7.3 7.3 0 1 0 14.6 0 a7.3 7.3 0 1 0 -14.6 0z' fill='rgba(229%2c 235%2c 247%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1055'%3e%3crect width='340' height='500' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  padding: 0 !important;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+
+.message-input {
+  padding: 6px 20px;
+}
+
+.empty-chat-sub-title {
+  text-align: center;
+  color: #555;
+  font-size: 18px;
+}
+
+.loading-messages-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.loading-text {
+  color: #1546dc;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.chat-bubble-row {
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+}
+
+.sender-name {
+  font-size: 14px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.chat-bubble {
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 10px;
+  position: relative;
+}
+
+.is-user {
+  background-color: #2285ff;
+}
+
+.is-other {
+  background-color: #f1f0f0;
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1)
+}
+
+.chat-box-bottom {
+  margin-top: auto;
+}

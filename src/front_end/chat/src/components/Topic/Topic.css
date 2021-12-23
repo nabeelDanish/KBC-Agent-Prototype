@@ -1,0 +1,32 @@
+.container {
+    position: relative;
+    border: 1px solid gainsboro;
+    width: 620px;
+    height: 450px;
+}
+.inputLabel {
+    position: relative;
+    top: 50px;
+    left: 130px;
+}
+.selector {
+    position: relative;
+    top: 50px;
+    left: 130px;
+}
+.searchBar {
+    position: relative;
+    top: 150px;
+}
+.topicSearch {
+    position: relative;
+    top: 150px;
+    left: 130px;
+}
+.progress {
+    background: transparent;
+    position: relative;
+    top: 170px;
+    left: 250px;
+    visibility: hidden;
+}
